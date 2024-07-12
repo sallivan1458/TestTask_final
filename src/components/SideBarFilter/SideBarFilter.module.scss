@@ -1,0 +1,71 @@
+.sideBarContainer_Y{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.name{
+  font-size: 18px;
+  line-height: 21.6px;
+}
+.exit{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  width: 24px;
+  font-size: 28px;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.head{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+
+.main{
+  padding: 10px;
+  gap: 15px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+.filterSectionFrame{
+  padding: 15px;
+  gap: 15px;
+}
+
+.footer{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-top: 1px solid rgba(0,0,0,0.4);
+}
+
+
+
+.filterName{
+  font-size: 18px;
+}
+.category{
+  color: #00203399;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 400;
+}
+
+.myStyleForInput > * > * > * > *:first-child > * > *{
+  white-space: nowrap !important;
+  overflow: hidden !important;
+}

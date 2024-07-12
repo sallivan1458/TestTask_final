@@ -1,0 +1,47 @@
+//@import "../../../node_modules/bootstrap/scss/bootstrap";
+
+
+.frame{
+  font-size: 16px !important;
+  font-weight: 400;
+  line-height: 24px;
+  height: 94px;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @media (max-width: 1199px) {
+    font-size: 12px !important;
+  }
+}
+
+.btnInFavorites{
+  z-index: 0 !important;
+  background:none;
+  color:#00395CCC;
+  transition: none !important;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: inherit !important;
+    color: #00395CCC !important;
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}
+
+.nameAPI{
+  font-size: 16px !important;
+  line-height: 24px !important;
+}
+
+.frameForModalElements{
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+}

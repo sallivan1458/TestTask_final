@@ -1,0 +1,37 @@
+@import "bootstrap/scss/bootstrap";
+
+* {
+    box-sizing: border-box !important;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+.col{
+    background-color: blue;
+    border: 3px solid blue;
+    border-radius: 8px;
+}
+.block{
+    background-color: red;
+    border: 3px solid black;
+    padding: 20px;
+    height: 100%;
+}
+
+
+.inter-fontsHH {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+            "slnt" 0;
+}
+
+h1{
+    text-align: center;
+}
+
+
