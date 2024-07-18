@@ -6,22 +6,15 @@ import {IProduct} from "./ProductSlice";
 
 
 interface IModalState {
-    productInfo:IProduct | undefined;
+    hasSmtData: boolean
+    productInfo?:IProduct | undefined;
     isModalOpen:boolean
 }
 
 
 const initialState: IModalState = {
-    productInfo: {
-        id:'1',
-        name:'first',
-        description:'firstDes',
-        authorizationType: 'apiKey',
-        supportHTTPS:true,
-        supportCORS:true,
-        category:'cats',
-        favorites:false
-    },
+    hasSmtData: false,
+    productInfo: undefined,
     isModalOpen: false,
 };
 
@@ -30,11 +23,14 @@ const ModalWindowSlice = createSlice({
     initialState,
     reducers: {
         ModalVisible: (state, action: PayloadAction<IProduct>) => {
-            state.isModalOpen = true
             state.productInfo = action.payload;
+            state.isModalOpen = true
+            state.hasSmtData = true
         },
         ModalInvisible: (state) => {
             state.isModalOpen = false
+            state.hasSmtData = false
+            console.log(state.isModalOpen)
         }
     },
 

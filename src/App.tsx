@@ -13,7 +13,7 @@ import SideBarFilter from "./components/SideBarFilter/SideBarFilter";
 export function App() {
 
     const dispatch = useAppDispatch();
-    const {isModalOpen, productInfo} = useAppSelector(state => state.modalWindow)
+    const { productInfo} = useAppSelector(state => state.modalWindow)
     const {loading, error} = useAppSelector(state => state.products)
     const [tab, setTab] = useState('search')
 
@@ -33,9 +33,8 @@ export function App() {
             <NavSection active={tab} onChange={tabName => setTab(tabName)}></NavSection>
             {tab === 'search' && <SearchSection/>}
             {tab === 'favorites' && <FavoritesGrid/>}
-            {loading===false && <ModalWindow active={isModalOpen} product={productInfo}></ModalWindow>}
+            {productInfo!==undefined && <ModalWindow/>}
             <SideBarFilter/>
-
 
         </Theme>
     )
