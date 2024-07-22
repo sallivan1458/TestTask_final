@@ -11,7 +11,7 @@ export default function FavoritesGrid() {
     return(
         <div className={classes.container}>
             <h3>Избранное</h3>
-            <div className={`${classes['row']} ${classes['gy-3']} ${classes['gx-3']}`}>
+            <div className={`${classes['row']} ${classes['gy-2']} ${classes['gx-2']}`}>
                 {products.filter(product => product.favorites).map((product: IProduct, _) => (
                     <div
                         className={`${classes['col-xxl-6']} ${classes['col-lg-6']} ${classes['col-md-10']} ${classes['col-15']}`}

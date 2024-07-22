@@ -20,24 +20,13 @@ export function SearchSection() {
                 </div>
             </div>
 
-            <div className={`${classes['row']}`}>
-                <div className={`
-                ${classes['col-xxl-10']}
-                ${classes['col-xl-9']}
-                ${classes['col-lg-9']}
-                ${classes['col-12']}
-                `}>
+            <div className={`${classes['gridFilterContainer']}`}>
+
+                <div className={`${classes['defaultGrid']}`}>
                     <DefaultGrid inputValue={inputValue} />
                 </div>
-                <div className={`
-                ${classes['col-xxl-2']}
-                ${classes['col-xl-3']}
-                ${classes['col-lg-3']}
-                ${classes['d-none']}
-                ${classes['d-xxl-block']}
-                ${classes['d-xl-block']}
-                ${classes['d-lg-block']}
-                `}>
+
+                <div className={`${classes['filterProduct']} ${classes['d-none']} ${classes['d-xxl-block']} ${classes['d-xl-block']} ${classes['d-lg-block']}`}>
                     <FilterProduct/>
                 </div>
             </div>

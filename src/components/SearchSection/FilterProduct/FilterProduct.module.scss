@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
+  width: 200px;
   height: 200px;
   border: 3px solid #7A7A7A;
   border-radius: 6px;
@@ -24,7 +24,12 @@
 
 .myStyleForInput > * > * > * > *:first-child > * > *{
   //background-color: #00DED1 !important;
-  max-width: 110px !important;
+  max-width: 95px !important;
   white-space: nowrap !important;
   overflow: hidden !important;
+  text-overflow: inherit !important;
+}
+
+.myStyleForInput > * > * > * > * {
+  max-width: 170px !important;
 }

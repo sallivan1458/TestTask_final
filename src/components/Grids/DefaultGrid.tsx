@@ -19,7 +19,7 @@ export default function DefaultGrid({inputValue}:IDefaultGridProps) {
 
 
     return(
-        <div className={`${classes['row']} ${classes['gy-3']} ${classes['gx-3']}`}>
+        <div className={`${classes['row']} ${classes['gy-2']} ${classes['gx-2']}`}>
             {loading && <>Loading...</>}
             {
                 products.filter(product => {
