@@ -22,11 +22,11 @@ export default function DefaultGrid({inputValue}:IDefaultGridProps) {
         <div className={`${classes['row']} ${classes['gy-2']} ${classes['gx-2']}`}>
             {loading && <>Loading...</>}
             {
-                products.filter(product => {
-                    if (supportHTTPS) return product.supportHTTPS === true
-                    return true
-
-                })
+                products
+                    .filter(product => {
+                        if (supportHTTPS) return product.supportHTTPS === true
+                        return true
+                    })
                     .filter(product => {
                         if (supportCORS) return product.supportCORS === true
                         return true

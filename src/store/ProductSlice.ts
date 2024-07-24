@@ -42,12 +42,14 @@ export const fetchProducts = () => {
 
 interface IProductState  {
     list: IProduct[],
+    favoritesListId: string[],
     loading: boolean,
     error: string | null,
 }
 
 const initialState: IProductState = {
     list: [],
+    favoritesListId: [],
     loading: true,
     error: null,
 }
@@ -63,16 +65,16 @@ const productSlice = createSlice({
             state.loading = false;
             state.error = null;
             state.list = action.payload;
-
         },
         fetchProductsError(state, action: PayloadAction<string>) {
             state.loading = false;
             state.error = action.payload;
         },
         toggleFavorites(state, action: PayloadAction<string>) {
-            const toggledTodo = state.list.find(todo => todo.id === action.payload);
-            if (toggledTodo) {
-                toggledTodo.favorites = !toggledTodo.favorites;
+            if (!state.favoritesListId.includes(action.payload)) {
+                state.favoritesListId.push(action.payload);
+            } else {
+                state.favoritesListId = state.favoritesListId.filter(idFavorit => idFavorit !== action.payload);
             }
         },
     }

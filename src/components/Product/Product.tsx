@@ -6,20 +6,22 @@ import React from "react";
 import {IconFavoriteStroked} from "@consta/icons/IconFavoriteStroked";
 import useWindowSize from "../../hooks/useWindowSize";
 import {IProduct, toggleFavorites} from "../../store/ProductSlice";
-import {useAppDispatch} from "../../hooks/useDispatchAndSelector";
+import {useAppDispatch, useAppSelector} from "../../hooks/useDispatchAndSelector";
 import { ModalVisible} from "../../store/ModalWindowSlice";
 
 
 interface IProductProps{
-    product:IProduct
-    [key: string]: any;
+    product:IProduct,
+    [key: string]: any,
 }
 
-export default function Product ({product ,...props}:IProductProps){
+export default function Product ({product,...props}:IProductProps){
 
     const dispatch = useAppDispatch();
     const { width } = useWindowSize();
+    const favoritesListId = useAppSelector(state => state.products.favoritesListId);
 
+    let favorite = favoritesListId.includes(product.id) ? true : false!
 
     const handleFavourites = (event: React.MouseEvent<HTMLButtonElement>) => {
         dispatch(toggleFavorites(product.id))
@@ -38,8 +40,8 @@ export default function Product ({product ,...props}:IProductProps){
                     <Button
                         size={width < 1200 ? 'xs' : 's'}
                         className={classes['btnInFavorites']}
-                        iconRight={product.favorites ? IconFavoriteFilled : IconFavoriteStroked}
-                        label={product.favorites ? 'в избранном' : 'в избранное'}
+                        iconRight={favorite ? IconFavoriteFilled : IconFavoriteStroked}
+                        label={favorite ? 'в избранном' : 'в избранное'}
                         onClick={handleFavourites}
                     />
             </div>

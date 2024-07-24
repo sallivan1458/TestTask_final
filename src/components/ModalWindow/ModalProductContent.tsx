@@ -12,12 +12,9 @@ export default function ModalProductContent(){
 
     const {name, description, authorizationType, supportHTTPS, supportCORS, category, id}
         = useAppSelector(state => state.modalWindow.productInfo)
-
-    const active
-        = useAppSelector(state => state.modalWindow.isModalOpen)
-
-    const favorites
-        = useAppSelector(state => state.products.list[Number(id) - 1].favorites)
+    const favoritesListId
+        = useAppSelector(state => state.products.favoritesListId)
+    const favorites = favoritesListId.includes(id)
 
     const handleFavourites =
         (event: React.MouseEvent<HTMLButtonElement>) => dispatch(toggleFavorites(id));
